@@ -1,0 +1,9 @@
+.env
+.env.*
+proxy-helper-backups/
+proxy-helper.lock/
+__pycache__/
+*.py[cod]
+.DS_Store
+runtime/
+work/

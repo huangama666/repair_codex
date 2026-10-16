@@ -1,0 +1,13 @@
+验证记录（2026-10-16）
+
+Windows核心：23 passed, 0 failed。在macOS 26.4.1上的Microsoft官方PowerShell 7.6.6便携运行时执行。
+macOS核心：13 passed, 0 failed。在macOS 26.4.1上使用系统zsh与Perl执行。
+跨版本恢复：5 passed, 0 failed。覆盖Windows写入后macOS恢复、macOS写入后Windows恢复、原文件不存在、UTF-8 BOM/CRLF及Windows UTF-16备份恢复。
+macOS原生弹窗：5段AppleScript均通过osacompile编译检查，原生菜单可以启动；未进行完整截图验收。
+
+核心场景：HTTP CONNECT 200/拒绝/SOCKS-only/TCP-only、预览与取消不写入、旧文件原字节备份与还原、absence恢复删除新文件、重复应用、外部修改拒绝覆盖、操作锁、未提交备份、恢复记账中断补偿、BOM和换行、中文及美元符号路径、符号链接拒绝、异常编码拒绝。
+
+未验证：真实Windows 10/11上的Windows PowerShell 5.1、WinForms窗口交互、Windows ACL和监听进程查询。目标版本为5.1兼容代码，核心测试通过不等于这些Windows行为已获真机验证。
+
+测试使用隔离目录与模拟代理，真实Codex .env未被本次工具开发测试改动。
+配置写入成功不等于应用已加载配置；需要用户完全退出并重开应用后，用新任务实测重连是否消失。
